@@ -1,0 +1,84 @@
+# LaborLens Analytics
+
+Independent research project analyzing AI adoption trends and labor market
+outcomes across industries using CPS ASEC microdata and Census BTOS data.
+
+## Research Questions
+
+1. Do workers in AI-exposed occupations earn a wage premium in NAICS 54?
+2. Which subsectors are seeing the fastest AI adoption (BTOS)?
+3. Has the AI wage premium grown from 2020 to 2025?
+
+## Data Sources
+
+| Source | Coverage | Variables |
+|--------|----------|-----------|
+| IPUMS CPS ASEC | 2020–2025, NAICS 54 | Earnings, hours, occupation, education, age |
+| Census BTOS Subsector | Mid-2025–Mid-2026 | AI adoption % by subsector (Q7, Q24) |
+
+## Methods
+
+- **Mincer earnings regression** — OLS on log(EARNWEEK) controlling for AI exposure, education, age, year fixed effects
+- **AI wage premium** — exp(β_AI) - 1 = % earnings premium for AI-exposed occupations
+- **Trend analysis** — median earnings by occupation × year (2020–2025)
+- **BTOS adoption delta** — earliest vs latest biweekly period AI adoption % change
+
+## Occupational Exposure Groups
+
+**AI-Exposed** (Stanford AI Index high-intensity):
+- Software Developers, Engineers, QA
+- Computer Programmers
+- Cybersecurity Analysts
+- Database Administrators
+- Network/Systems Analysts
+
+**Comparison** (NAICS 54, lower AI exposure):
+- Lawyers, Paralegals
+- Accountants/Auditors
+- Architects, Civil Engineers
+- Chief Executives, IS Managers
+
+## Repo Structure
+
+```
+LaborLens/
+├── README.md
+├── requirements.txt
+├── src/
+│   ├── ipums_pipeline.py    # IPUMS CPS ingestion + cleaning
+│   └── btos_pipeline.py     # BTOS AI adoption pipeline
+├── notebooks/
+│   └── labor_lens_analysis.py  # Main analysis + regression
+├── outputs/                 # Generated plots (gitignored if large)
+└── data/
+    └── .gitkeep             # Raw data not committed
+```
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+Add data files to `data/`:
+- `CPS - 2020-2025.gz` — IPUMS CPS ASEC extract
+- `Subsector.xlsx` — Census BTOS subsector data
+
+## Run
+
+```python
+from src.ipums_pipeline import IPUMSPipeline
+from src.btos_pipeline import BTOSPipeline
+
+cps = IPUMSPipeline("data/CPS - 2020-2025.gz")
+cps.run()
+
+btos = BTOSPipeline("data/Subsector.xlsx")
+btos.run()
+```
+
+Or open `notebooks/labor_lens_analysis.py` in Google Colab.
+
+## Author
+
+Lead Data Scientist — LaborLens Analytics
