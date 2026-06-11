@@ -42,11 +42,11 @@ specifically within professional services.
 ### Theme 2 — Equity: Does AI exposure narrow or widen wage gaps?
 
 Gender and race wage gaps *inside* AI-exposed roles are underexplored.
-Most equity research examines tech broadly — not professional services specifically.
+Most equity research examines tech broadly, not professional services specifically.
 
 1. Do gender wage gaps within AI-exposed occupations in NAICS 54 differ
    significantly from gender wage gaps in non-AI occupations in the same
-   sector — and has this gap narrowed post-2022?
+   sector and has this gap narrowed post-2022?
 
 2. Does AI occupational exposure provide differential wage benefits across
    racial groups within NAICS 54, and if so, which groups see the largest
@@ -61,7 +61,7 @@ Most equity research examines tech broadly — not professional services specifi
 ### Theme 3 — Entry-level wages: Does AI accelerate early-career earnings?
 
 The experience-wage curve assumes earnings rise gradually with tenure.
-AI exposure may compress or extend this curve for young workers — a question
+AI exposure may compress or extend this curve for young workers, a question
 with direct implications for workforce development and education policy.
 
 1. Do entry-level workers (age ≤30) in AI-exposed occupations in NAICS 54
@@ -70,7 +70,7 @@ with direct implications for workforce development and education policy.
 2. Has the entry-level AI wage premium grown post-2022, suggesting generative
    AI tools are differentially rewarding younger workers earlier in their careers?
 
-3. Does the entry-level AI wage premium compound with education — do young
+3. Does the entry-level AI wage premium compound with education; do young
    workers with college degrees in AI roles earn disproportionately more than
    young workers without?
 
@@ -141,9 +141,9 @@ Comparison group (NAICS 54, lower AI exposure):
 
 - AI-exposed workers earn **+13.2% wage premium** in NAICS 54 (p<0.001)
 - AI-exposed occupation share grew **48.4% → 54.3%** of NAICS 54 (2020–2023)
-- Post-2022 DiD estimate: **-5.5%** — inconclusive (p=0.42, ns) — needs longer post window
+- Post-2022 DiD estimate: **-5.5%** — inconclusive (p=0.42, ns). This needs longer post window
 - Gender gap **narrows inside AI roles**: $100/wk vs $404/wk in non-AI roles
-- Black workers see **+$207/wk** lift from AI exposure — largest racial benefit
+- Black workers see **+$207/wk** lift from AI exposure, whcih is the largest racial benefit
 - Asian workers command highest AI-exposed median: **$1,683/wk**
 
 ---
@@ -201,14 +201,14 @@ econ.plot_all(save_path="outputs/econometric_summary.png")
 
 ## Limitations
 
-- CPS ASEC sample size after NAICS 54 + occupation filter: n≈964 — limits statistical power
-- No geographic variables in current extract — state/metro analysis pending
-- BTOS × CPS cross-reference pending — firm AI adoption rate not yet linked to worker outcomes
+- CPS ASEC sample size after NAICS 54 + occupation filter: n≈964, which limits statistical power
+- No geographic variables in current extract; state/metro analysis pending
+- BTOS × CPS cross-reference pendingl firm AI adoption rate not yet linked to worker outcomes
 - TFP analysis requires external BLS/BEA productivity data — not in current pipeline
-- Post-2022 DiD window short — 2024/2025 ASEC releases will strengthen identification
+- Post-2022 DiD window short; 2024/2025 ASEC releases will strengthen identification
 
 ---
 
 ## Author
 
-Lead Data Scientist — LaborLens Analytics
+Michael Huynh - LaborLens Personal Side Project
